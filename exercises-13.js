@@ -5,16 +5,21 @@ function sorting(arrNumber) {
         return [];
     }
 
-    var indexKecil, tempKecil;
+    var indexKecil, tempKecil, newArr = [];
     for (let i = 0; i < arrNumber.length; i++) {
         if (indexKecil === undefined || arrNumber[indexKecil] > arrNumber[i]) {
             indexKecil = i;
         }
     }
-    tempKecil = arrNumber[indexKecil];
-    arrNumber.splice(indexKecil, 1);
 
-    return [tempKecil].concat(sorting(arrNumber));
+    // loop menggantikan logic splice
+    for (let i = 0; i < arrNumber.length; i++) {
+        if (i !== indexKecil) {
+            newArr.push(arrNumber[i]);
+        }
+    }
+
+    return [arrNumber[indexKecil]].concat(sorting(newArr));
 }
 
 function getTotal(arrNumber) {
@@ -23,8 +28,12 @@ function getTotal(arrNumber) {
         return 1;
     }
 
-    arrNumber.splice(arrNumber.length - 1, 1);
-    return arrNumber.length > 0 ? 1 + getTotal(arrNumber) : '';
+    var newArr = [];
+    // looping menggantikan logic splice
+    for (let i = 0; i < arrNumber.length - 1; i++) {
+        newArr.push(arrNumber[i])
+    }
+    return arrNumber.length > 0 ? 1 + getTotal(newArr) : '';
 }
 
 function mostFrequentLargestNumbers(arrNumber) {
