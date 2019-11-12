@@ -1,16 +1,11 @@
 function attack(damage) {
     // Code disini
-    return damage-2;
+    return damage - 2;
 }
 
 function damageCalculation(numberOfAttacks, damagePerAttack) {
     // Code disini
-    var res = 0;
-    for (let i = 0; i < numberOfAttacks; i++) {
-        res += attack(damagePerAttack);
-    }
-
-    return res;
+    return numberOfAttacks === 0 ? 0 : attack(damagePerAttack) + damageCalculation(numberOfAttacks - 1, damagePerAttack);
 }
 
 // TEST CASE
