@@ -3,49 +3,49 @@ function changeVocals(str) {
     //(ex: a -> b, i -> j, u -> v, e -> f, o -> p, A -> B, I -> J, U -> V, E -> F, O -> P)
     var ubah;
     switch (str.toLowerCase()) {
-        case 'a': 
+        case 'a':
             ubah = 'b';
             break;
-        case 'i': 
+        case 'i':
             ubah = 'j';
             break;
-        case 'u': 
+        case 'u':
             ubah = 'v';
             break;
-        case 'e': 
+        case 'e':
             ubah = 'f';
             break;
-        case 'o': 
+        case 'o':
             ubah = 'p';
             break;
-    }    
+    }
 
     return str === str.toLowerCase() ? ubah : ubah.toUpperCase();
 }
 
 function reverseWord(str) {
     //code di sini
-    var res = '';
-
-    for (let i = str.length-1; i >= 0; i--) {
-        switch (str[i].toLowerCase()) {
-            case 'a':
-            case 'i':
-            case 'u':
-            case 'e':
-            case 'o':
-                res += setLowerUpperCase(changeVocals(str[i]));
-                break;
-            case ' ':
-                res += removeSpaces(str[i]);
-                break;
-            default:
-                res += setLowerUpperCase(str[i]);
-                break;
-        }
+    if (str.length === 0) {
+        return '';
     }
 
-    return res;
+    switch (str[str.length - 1].toLowerCase()) {
+        case 'a':
+        case 'i':
+        case 'u':
+        case 'e':
+        case 'o':
+            res = setLowerUpperCase(changeVocals(str[str.length - 1]));
+            break;
+        case ' ':
+            res = removeSpaces(str[str.length - 1]);
+            break;
+        default:
+            res = setLowerUpperCase(str[str.length - 1]);
+            break;
+    }
+
+    return res += reverseWord(str.slice(0, str.length - 1));
 }
 
 function setLowerUpperCase(str) {

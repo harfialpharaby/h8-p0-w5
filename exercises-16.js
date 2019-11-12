@@ -1,6 +1,6 @@
 function totalDigitRekursif(angka) {
     // you can only write your code here!
-    return angka > 10 ? (angka%10) + totalDigitRekursif(Math.floor(angka/10)) : angka;
+    return angka <= 10 ? angka : (angka % 10) + totalDigitRekursif(Math.floor(angka / 10));
 }
 
 // TEST CASES

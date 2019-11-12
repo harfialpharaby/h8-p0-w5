@@ -1,15 +1,6 @@
 function makanTerusRekursif(waktu) {
     // you can only write your code here!
-    var res;
-    if (waktu === 0) {
-        res = 0;
-    } else if (waktu <= 15 && waktu > 0) {
-        res = 1;
-    } else {
-        res = 1 + makanTerusRekursif(waktu-15);
-    }
-
-    return res;
+    return waktu <= 0 ? 0 : 1 + makanTerusRekursif(waktu - 15);
 }
 
 // TEST CASES

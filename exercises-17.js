@@ -1,7 +1,7 @@
 function kaliTerusRekursif(angka) {
     // you can only write your code here!
     while (angka > 10) {
-        angka = (angka%10) * kaliTerusRekursif(Math.floor(angka/10));
+        angka = (angka % 10) * kaliTerusRekursif(Math.floor(angka / 10));
     }
 
     return angka;
