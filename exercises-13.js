@@ -24,16 +24,15 @@ function sorting(arrNumber) {
 
 function getTotal(arrNumber) {
     // code di sini
-    if ((arrNumber.length > 0 && arrNumber[arrNumber.length - 2] === undefined) || arrNumber[arrNumber.length - 2] !== arrNumber[arrNumber.length - 1]) {
-        return 1;
+    var res = [arrNumber[arrNumber.length - 1]];
+    for (let i = arrNumber.length - 2; i >= 0; i--) {
+        if (arrNumber[i] !== res[0]) {
+            break;
+        }
+        res.push(arrNumber[i]);
     }
 
-    let newArr = [];
-    // looping menggantikan logic splice
-    for (let i = 0; i < arrNumber.length - 1; i++) {
-        newArr.push(arrNumber[i])
-    }
-    return arrNumber.length > 0 ? 1 + getTotal(newArr) : '';
+    return res[0] === undefined ? '' : `angka paling besar adalah ${res[0]} dan jumlah kemunculan sebanyak ${res.length} kali`;
 }
 
 function mostFrequentLargestNumbers(arrNumber) {
