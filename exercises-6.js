@@ -1,7 +1,7 @@
 function meleeRangedGrouping(str) {
     //your code here
-    var temp = str.split(/[,-]/);
-    var res = [
+    let temp = str.split(/[,-]/);
+    let res = [
         [],
         []
     ];

@@ -1,7 +1,7 @@
 function changeVocals(str) {
     //code di sini
     //(ex: a -> b, i -> j, u -> v, e -> f, o -> p, A -> B, I -> J, U -> V, E -> F, O -> P)
-    var ubah;
+    let ubah;
     switch (str.toLowerCase()) {
         case 'a':
             ubah = 'b';

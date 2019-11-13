@@ -6,8 +6,8 @@ function hapusSimbol(str) {
         return '';
     }
 
-    var alfanumeric = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    var ketemu = false;
+    let alfanumeric = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let ketemu = false;
     for (let i = 0; i < alfanumeric.length; i++) {
         if (str[0].toLowerCase() === alfanumeric[i]) {
             ketemu = true;

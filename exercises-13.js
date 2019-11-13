@@ -5,7 +5,7 @@ function sorting(arrNumber) {
         return [];
     }
 
-    var indexKecil, tempKecil, newArr = [];
+    let indexKecil, tempKecil, newArr = [];
     for (let i = 0; i < arrNumber.length; i++) {
         if (indexKecil === undefined || arrNumber[indexKecil] > arrNumber[i]) {
             indexKecil = i;
@@ -28,7 +28,7 @@ function getTotal(arrNumber) {
         return 1;
     }
 
-    var newArr = [];
+    let newArr = [];
     // looping menggantikan logic splice
     for (let i = 0; i < arrNumber.length - 1; i++) {
         newArr.push(arrNumber[i])
@@ -37,8 +37,8 @@ function getTotal(arrNumber) {
 }
 
 function mostFrequentLargestNumbers(arrNumber) {
-    var listSort = sorting(arrNumber);
-    var countHighest = getTotal(listSort);
+    let listSort = sorting(arrNumber);
+    let countHighest = getTotal(listSort);
 
     return countHighest;
 }
